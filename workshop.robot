@@ -28,6 +28,7 @@ ${SIXTHPAGE_BTN}		//*[@id="getprice"]
 *** Test Cases ***
 Go To homepage
  	Open Browser 	${HOMEPAGE} 	${BROWSER}
+	Set Selenium Speed		0.01s
 	Wait Until Page Contains Element	${FIRSTPAGE_BTN}	5
 	Input Text		${FIRSTPAGE_XPATH_INPUT}		${TEAMNAME}
 	Click Element	${FIRSTPAGE_BTN}
@@ -48,5 +49,5 @@ Go To homepage
 	Click Element	${FIFTHPAGE_BTN}
 	Wait Until Page Contains Element	${SIXTHPAGE_BTN}	5
 	${FINAL_TEXT}=	Get Text	${SIXPAGE_TEXT}
-	Log To Console	${RANDOM_TEXT}
 	Click Element	${SIXTHPAGE_BTN}
+	Log To Console	${FINAL_TEXT}
