@@ -41,9 +41,7 @@ Go To homepage
 	Click Element	${THIRDPAGE_BTN}
 	Wait Until Page Contains Element	${FORTHPAGE_BTN}	5
 	Wait Until Element Is Visible	${FORTHPAGE_BTN}
-	# Wait Until Page Contains	29.9		60
 	Wait Until Page Contains	30.		60
-	# Wait Until Element Contains		${FORTHPAGE_XPATH}		30
 	Click Element	${FORTHPAGE_BTN}
 	Wait Until Page Contains Element	${FIFTHPAGE_XPATH}	5
 	Select Radio Button		next	${FIFTHPAGE_VALUE}
