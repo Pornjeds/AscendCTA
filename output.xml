@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180929 14:07:59.939" generator="Robot 3.0.4 (Python 2.7.15 on darwin)">
+<suite source="/Users/pornjeds/Projects/AscendTest/testrobot.robot" id="s1" name="Testrobot">
+<test id="s1-t1" name="Go To homepage">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${HOMEPAGE}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20180929 14:08:00.128" level="INFO">Opening browser 'chrome' to base url 'http://ctaworkshop.000webhostapp.com/chapter/xpath/xpath2.html'.</msg>
+<status status="PASS" endtime="20180929 14:08:02.907" starttime="20180929 14:08:00.127"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${XPATH}</arg>
+<arg>${TEXT}</arg>
+</arguments>
+<msg timestamp="20180929 14:08:02.909" level="INFO">Typing text 'HelloPornjeds' into text field '//div[@name='area2']//input[@type='text']'.</msg>
+<status status="PASS" endtime="20180929 14:08:03.134" starttime="20180929 14:08:02.907"></status>
+</kw>
+<status status="PASS" endtime="20180929 14:08:03.134" critical="yes" starttime="20180929 14:08:00.126"></status>
+</test>
+<status status="PASS" endtime="20180929 14:08:03.136" starttime="20180929 14:07:59.940"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Testrobot" pass="1">Testrobot</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
