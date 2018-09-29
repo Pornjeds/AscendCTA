@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20180929 14:07:59.939" generator="Robot 3.0.4 (Python 2.7.15 on darwin)">
-<suite source="/Users/pornjeds/Projects/AscendTest/testrobot.robot" id="s1" name="Testrobot">
+<robot generated="20180929 15:56:54.204" generator="Robot 3.0.4 (Python 2.7.15 on darwin)">
+<suite source="/Users/pornjeds/Projects/AscendTest/workshop.robot" id="s1" name="Workshop">
 <test id="s1-t1" name="Go To homepage">
 <kw name="Open Browser" library="Selenium2Library">
 <doc>Opens a new browser instance to the given ``url``.</doc>
@@ -8,21 +8,199 @@
 <arg>${HOMEPAGE}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20180929 14:08:00.128" level="INFO">Opening browser 'chrome' to base url 'http://ctaworkshop.000webhostapp.com/chapter/xpath/xpath2.html'.</msg>
-<status status="PASS" endtime="20180929 14:08:02.907" starttime="20180929 14:08:00.127"></status>
+<msg timestamp="20180929 15:56:54.328" level="INFO">Opening browser 'chrome' to base url 'https://ctaworkshop.000webhostapp.com/'.</msg>
+<status status="PASS" endtime="20180929 15:57:03.901" starttime="20180929 15:56:54.328"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${FIRSTPAGE_BTN}</arg>
+<arg>5</arg>
+</arguments>
+<status status="PASS" endtime="20180929 15:57:05.013" starttime="20180929 15:57:03.901"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
 <arguments>
-<arg>${XPATH}</arg>
-<arg>${TEXT}</arg>
+<arg>${FIRSTPAGE_XPATH_INPUT}</arg>
+<arg>${TEAMNAME}</arg>
 </arguments>
-<msg timestamp="20180929 14:08:02.909" level="INFO">Typing text 'HelloPornjeds' into text field '//div[@name='area2']//input[@type='text']'.</msg>
-<status status="PASS" endtime="20180929 14:08:03.134" starttime="20180929 14:08:02.907"></status>
+<msg timestamp="20180929 15:57:05.014" level="INFO">Typing text 'A_LE' into text field '//*[@id="username"]'.</msg>
+<status status="PASS" endtime="20180929 15:57:05.124" starttime="20180929 15:57:05.013"></status>
 </kw>
-<status status="PASS" endtime="20180929 14:08:03.134" critical="yes" starttime="20180929 14:08:00.126"></status>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${FIRSTPAGE_BTN}</arg>
+</arguments>
+<msg timestamp="20180929 15:57:05.125" level="INFO">Clicking element '//*[@id="nextto2"]/span'.</msg>
+<status status="PASS" endtime="20180929 15:57:05.190" starttime="20180929 15:57:05.124"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${SECONDPAGE_XPATH}</arg>
+<arg>5</arg>
+</arguments>
+<status status="PASS" endtime="20180929 15:57:07.139" starttime="20180929 15:57:05.191"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>${SECONDPAGE_XPATH}</arg>
+</arguments>
+<assign>
+<var>${RANDOM_TEXT}</var>
+</assign>
+<msg timestamp="20180929 15:57:07.166" level="INFO">${RANDOM_TEXT} = Welcome To Ascend</msg>
+<status status="PASS" endtime="20180929 15:57:07.166" starttime="20180929 15:57:07.139"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${RANDOM_TEXT}</arg>
+</arguments>
+<status status="PASS" endtime="20180929 15:57:07.167" starttime="20180929 15:57:07.167"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${SECONDPAGE_BTN}</arg>
+</arguments>
+<msg timestamp="20180929 15:57:07.167" level="INFO">Clicking element '//*[@id="nextto3"]'.</msg>
+<status status="PASS" endtime="20180929 15:57:07.297" starttime="20180929 15:57:07.167"></status>
+</kw>
+<kw name="Input Text Into Alert" library="Selenium2Library">
+<doc>Types the given ``text`` into an input field in an alert.</doc>
+<arguments>
+<arg>${RANDOM_TEXT}</arg>
+<arg>ACCEPT</arg>
+</arguments>
+<status status="PASS" endtime="20180929 15:57:07.319" starttime="20180929 15:57:07.297"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${THIRDPAGE_XPATH}</arg>
+<arg>5</arg>
+</arguments>
+<status status="PASS" endtime="20180929 15:57:09.529" starttime="20180929 15:57:07.319"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<arguments>
+<arg>${THIRDPAGE_XPATH}</arg>
+<arg>${THIRDPAGE_VALUE}</arg>
+</arguments>
+<msg timestamp="20180929 15:57:09.530" level="INFO">Selecting options from selection list '//*[@id="content"]/select' by value ascendb2b.</msg>
+<status status="PASS" endtime="20180929 15:57:09.596" starttime="20180929 15:57:09.530"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${THIRDPAGE_BTN}</arg>
+</arguments>
+<msg timestamp="20180929 15:57:09.598" level="INFO">Clicking element '//*[@id="nextto4"]'.</msg>
+<status status="PASS" endtime="20180929 15:57:09.662" starttime="20180929 15:57:09.597"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${FORTHPAGE_BTN}</arg>
+<arg>5</arg>
+</arguments>
+<status status="PASS" endtime="20180929 15:57:10.979" starttime="20180929 15:57:09.663"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${FORTHPAGE_BTN}</arg>
+</arguments>
+<status status="PASS" endtime="20180929 15:57:11.003" starttime="20180929 15:57:10.979"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>30.</arg>
+<arg>60</arg>
+</arguments>
+<status status="PASS" endtime="20180929 15:57:39.846" starttime="20180929 15:57:11.003"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${FORTHPAGE_BTN}</arg>
+</arguments>
+<msg timestamp="20180929 15:57:39.847" level="INFO">Clicking element '//*[@id="nextto5"]'.</msg>
+<status status="PASS" endtime="20180929 15:57:39.919" starttime="20180929 15:57:39.846"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${FIFTHPAGE_XPATH}</arg>
+<arg>5</arg>
+</arguments>
+<status status="PASS" endtime="20180929 15:57:42.974" starttime="20180929 15:57:39.919"></status>
+</kw>
+<kw name="Select Radio Button" library="Selenium2Library">
+<doc>Sets radio button group ``group_name`` to ``value``.</doc>
+<arguments>
+<arg>next</arg>
+<arg>${FIFTHPAGE_VALUE}</arg>
+</arguments>
+<msg timestamp="20180929 15:57:42.974" level="INFO">Selecting 'i want to go to next stage' from radio button 'next'.</msg>
+<status status="PASS" endtime="20180929 15:57:43.037" starttime="20180929 15:57:42.974"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${FIFTHPAGE_BTN}</arg>
+</arguments>
+<msg timestamp="20180929 15:57:43.038" level="INFO">Clicking element '//*[@id="nextto6"]'.</msg>
+<status status="PASS" endtime="20180929 15:57:43.113" starttime="20180929 15:57:43.038"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${SIXTHPAGE_BTN}</arg>
+<arg>5</arg>
+</arguments>
+<status status="PASS" endtime="20180929 15:57:44.211" starttime="20180929 15:57:43.115"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>${SIXPAGE_TEXT}</arg>
+</arguments>
+<assign>
+<var>${FINAL_TEXT}</var>
+</assign>
+<msg timestamp="20180929 15:57:44.247" level="INFO">${FINAL_TEXT} = Your information
+username : A_LE
+your quote : Welcome To Ascend
+company : ascendb2b
+your meter value : 30.20000000000016
+your radio button selection : i want to go to next stage</msg>
+<status status="PASS" endtime="20180929 15:57:44.247" starttime="20180929 15:57:44.212"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${RANDOM_TEXT}</arg>
+</arguments>
+<status status="PASS" endtime="20180929 15:57:44.248" starttime="20180929 15:57:44.247"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${SIXTHPAGE_BTN}</arg>
+</arguments>
+<msg timestamp="20180929 15:57:44.249" level="INFO">Clicking element '//*[@id="getprice"]'.</msg>
+<status status="PASS" endtime="20180929 15:57:44.343" starttime="20180929 15:57:44.248"></status>
+</kw>
+<status status="PASS" endtime="20180929 15:57:44.344" critical="yes" starttime="20180929 15:56:54.327"></status>
 </test>
-<status status="PASS" endtime="20180929 14:08:03.136" starttime="20180929 14:07:59.940"></status>
+<status status="PASS" endtime="20180929 15:57:44.346" starttime="20180929 15:56:54.207"></status>
 </suite>
 <statistics>
 <total>
@@ -32,7 +210,7 @@
 <tag>
 </tag>
 <suite>
-<stat fail="0" id="s1" name="Testrobot" pass="1">Testrobot</stat>
+<stat fail="0" id="s1" name="Workshop" pass="1">Workshop</stat>
 </suite>
 </statistics>
 <errors>
